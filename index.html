@@ -3,16 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Odin's Sketchpad</title>
+  <title>Retro Sketchpad</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✏️</text></svg>">
 </head>
 <body>
-  <div class="slidecontainer">
-    <input autocomplete="off" type="range" min="2" max="100" value="16" class="slider" id="rangeSlider">
-  </div>
-  <div id="gridContainer">
+  <header>
+    <h1>Retro Sketchpad</h1>
+  </header>
+  <main>
+    <div class="sliderContainer">
+      <div class="sidebar">
+        <p>Number of Pixels</p>
+        <p class="sliderDisplay">16 x 16</p>
+      </div>
+      <input autocomplete="off" type="range" min="2" max="100" value="16" class="slider" id="rangeSlider">
+    </div>
+    <div id="gridContainer"></div>
+  </main>
+  <footer>Created by Antonio Guerriere - 2023</footer>
 
-  </div>
   <script src="main.js"></script>
 </body>
 </html>

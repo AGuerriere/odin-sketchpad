@@ -38,4 +38,9 @@ function addListener(){
 
 
 const rangeSlider = document.getElementById('rangeSlider')
-rangeSlider.addEventListener('change', (e) => createGrid(rangeSlider.value))
+const sliderDisplay = document.querySelector('.sliderDisplay')
+rangeSlider.addEventListener('change', (e) => {
+  createGrid(rangeSlider.value);
+  sliderDisplay.innerText = `${rangeSlider.value} x ${rangeSlider.value}`
+
+})
