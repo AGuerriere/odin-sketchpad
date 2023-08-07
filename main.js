@@ -1,4 +1,5 @@
 const gridContainer = document.getElementById('gridContainer')
+let squareColor = '#2efffe'
 
 // create a grid of size * size divs that is always 1000px
 const createGrid = (size) => {
@@ -6,7 +7,7 @@ const createGrid = (size) => {
   gridContainer.replaceChildren()
 
   // Calculate the size of each grid item based on the number of items and the container size
-  const gridItemSize = 500 / size;
+  const gridItemSize = (700 / size);
 
 
   // create and add new divs
@@ -30,13 +31,12 @@ function addListener(){
   const gridSquares = document.querySelectorAll('#gridContainer > div')
   gridSquares.forEach(square => {
   square.addEventListener("mouseover", () => {
-    square.style.backgroundColor = 'aqua'
+    square.style.backgroundColor = squareColor
   })
 });
 }
 
-
-
+// Input slider changes size of the greed
 const rangeSlider = document.getElementById('rangeSlider')
 const sliderDisplay = document.querySelector('.sliderDisplay')
 rangeSlider.addEventListener('change', (e) => {
@@ -44,3 +44,27 @@ rangeSlider.addEventListener('change', (e) => {
   sliderDisplay.innerText = `${rangeSlider.value} x ${rangeSlider.value}`
 
 })
+
+// Color picker
+const colorPicker = document.getElementById('colorPicker')
+colorPicker.addEventListener('change', (e) => {
+  squareColor = colorPicker.value
+})
+
+// Eraser
+const eraser = document.querySelector('.eraser')
+eraser.addEventListener('click', () => {
+  squareColor = 'white'
+})
+
+// Multicolor
+const multicolor = document.querySelector('.multicolor')
+multicolor.addEventListener('click', () => {
+  while (true) {
+    squareColor = `rgb(${getRandomInt()}, ${getRandomInt()}, ${getRandomInt()})`
+  }
+})
+
+function getRandomInt() {
+  return Math.floor(Math.random() * 256);
+}
