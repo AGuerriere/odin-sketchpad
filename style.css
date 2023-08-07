@@ -1,5 +1,7 @@
 :root {
-  --green: rgb(0, 255, 115)
+  --green: rgb(0, 255, 115);
+  --light-green: rgba(0, 255, 115, 0.235);
+  --dark-grey: rgb(19, 19, 19);
 }
 
 * {
@@ -12,11 +14,14 @@ body {
   height: 100%;
   background-color: black;
   color:var(--green);
+  margin:0;
 }
 
 header {
   display: flex;
   justify-content: center;
+  margin-bottom: 50px;
+  background-color: var(--dark-grey);
 }
 
 h1 {
@@ -27,13 +32,14 @@ h1 {
 
 #gridContainer > div {
  background-color: white;
- border:1px solid grey;
+ border:0.5px solid rgba(175, 175, 175, 0.273);
 }
 
 
 #gridContainer {
   display: grid;
   border: 4px solid var(--green);
+
 }
 
 main {
@@ -48,7 +54,7 @@ main {
   margin-right: 50px;
   background-color: rgb(23, 23, 23);
   min-width: 20vw;
-  padding: 2rem;
+  padding: 45px 2rem;
 }
 
 .siderbar > * {
@@ -60,25 +66,32 @@ main {
   margin: 0 auto;
   text-align: center;
   width: 100%;
+  margin-bottom: 15px;
+  padding: 5px;
 }
 
-.sizePicker > p{
+.sizePicker > p {
   margin: 0 auto 5px auto;
 }
 
 footer {
   text-align: center;
   margin: 0 auto;
-  position: fixed;
   bottom: 10px;
-  width: 100%;
+  width: 100%;;
+  padding: 20px
 }
 
 button {
 margin-bottom: 20px;
 background-color:rgba(8, 8, 8, 0.678);
 color:var(--green);
-border: 2px solid 
+border: 2px solid;
+height: 30px;
+}
+
+button:active {
+  background-color: var(--light-green);
 }
 
 .colorPickerContainer {
@@ -89,4 +102,12 @@ border: 2px solid
 
 #colorPicker {
   margin-right: 15px;
+}
+
+.gridContainerWrap {
+  border:45px solid var(--dark-grey)
+}
+
+button:focus {
+  background-color: red;
 }
