@@ -25,8 +25,7 @@ const createGrid = (size) => {
   colorFillGrid();
 }
 
-createGrid(16)
-colorFillGrid()
+
 
 // add an event listener for each of the suqares in #gridContainer
 function addListener(){
@@ -62,26 +61,39 @@ eraser.addEventListener('click', () => {
 // Multicolor
 const multicolor = document.querySelector('.multicolor')
 multicolor.addEventListener('click', () => {
-  console.log('waiting implementation')
+  createGrid(rangeSlider.value);
+
+  // random integer generator
+  const randomInt = () => {return Math.floor(Math.random() * 256)}
+
+  const gridSquares = document.querySelectorAll('#gridContainer > div')
+  gridSquares.forEach(square => {
+  square.addEventListener("mouseover", () => {
+    square.style.backgroundColor = `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`
+  })
+});
+
 })
 
 // Color Fill
 function colorFillGrid(){
-const colorFill = document.querySelector('.colorFill')
-const gridItems = document.querySelectorAll('#gridContainer > *')
-colorFill.addEventListener('click', () => {
-  gridItems.forEach((div) => {
-    div.style.backgroundColor = `${colorPicker.value}`
+  const colorFill = document.querySelector('.colorFill')
+  const gridItems = document.querySelectorAll('#gridContainer > *')
+  colorFill.addEventListener('click', () => {
+    gridItems.forEach((div) => {
+      div.style.backgroundColor = `${colorPicker.value}`
+    })
   })
-})
 }
 
 // Clear
 const clear = document.querySelector('.clear')
 const gridItems = document.querySelectorAll('#gridContainer > *')
 clear.addEventListener('click', () => {
-  gridItems.forEach((div) => {
-    div.style.backgroundColor = 'white'
-  })
+  createGrid(rangeSlider.value)
 })
+
+
   
+createGrid(rangeSlider.value)
+colorFillGrid()
