@@ -3,6 +3,7 @@
   --light-green: rgba(0, 255, 115, 0.235);
   --dark-grey: rgb(19, 19, 19);
   --pink: rgb(255, 0, 242);
+  --dark-yellow: #2f2500;
 }
 
 * {
@@ -13,7 +14,7 @@
 body {
   box-sizing: border-box;
   height: 100%;
-  background-color: black;
+  background-color: var(--dark-yellow);
   color:var(--yellow);
   margin:0;
 }

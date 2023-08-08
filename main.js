@@ -49,7 +49,12 @@ rangeSlider.addEventListener('change', (e) => {
 // Color picker
 const colorPicker = document.getElementById('colorPicker')
 colorPicker.addEventListener('change', (e) => {
-  squareColor = colorPicker.value
+  const gridItems = document.querySelectorAll('#gridContainer > *')
+  gridItems.forEach((div) => {
+    div.addEventListener('mouseover', ()=>{
+      div.style.backgroundColor = `${colorPicker.value}`
+    })
+  })
 })
 
 // Eraser
